@@ -26,7 +26,6 @@ func (c *Client) GetMetrics() (*SystemMetrics, error) {
 		return nil, err
 	}
 	ls := SystemMetrics{}
-	// data, err := c.metricsHttpGet("/metrics/metrics?pretty=true", requestJSON(), requestExpects(200))
 	data, err := c.httpGet("/metrics/metrics?pretty=true", requestJSON(), requestExpects(200))
 	if err != nil {
 		return nil, err
